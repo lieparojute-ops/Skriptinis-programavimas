@@ -21,15 +21,20 @@ ylabel('F_1 [-o-]   |   F_2 [-x-]')
 % linspace – sukuria tolygiai išdestytu tasku vektoriu
 % v = linspace(x1, x2, n)   |    n tasku nuo x1 iki x2
 
-% size – grazina matricos matmenis
-% max – randa didziausia reiksme
+% size – grazina matricos/masyvo matmenis (sz = size(A))
+% max – randa didziausia elementa (M = max(A))
 % M = max(A)    Didziausia kiekvieno stulpelio reiksme
 
 %% Papildoma užduotis
+format shortG
 
+%1
 N = 9;
+
+%2
 v = N+1 : 0.5 : N+4;
 
+%3
 A = N : N+8;
 A = reshape(A, 3, 3)';
 
@@ -39,11 +44,29 @@ disp(v);
 disp('Matrica A:');
 disp(A);
 
-% a) 3 eil, 2 stulp
+%4
+% a)
 a = A(3,2);
 
-% b) 2-3 eil, 1-2 stulp
+% b)
 b = A(2:3, 1:2);
 
-% c) 1 ir 3 eil, 1 ir 3 stulp
+% c)
 c = A([1 3], [1 3]);
+
+%5
+% prijungimas su visais elementais
+v_mod = [v NaN NaN];
+v_mod = reshape(v_mod, 3, 3)';
+
+B = [A v_mod];
+
+disp('A + v:');
+disp(B);
+
+% prijungimas ne su visais elementais
+v_mod = v(2:2:6)';
+B = [A v_mod];
+
+disp('A + v:');
+disp(B);
