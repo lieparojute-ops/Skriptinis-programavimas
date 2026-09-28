@@ -35,7 +35,7 @@ hold off
 
 xlabel('x')
 ylabel('f(x)')
-title('Eksponentinės funkcijos')
+title('Eksponentines funkcijos')
 legend('e^x', 'e^{3x}', 'e^{5x}')
 axis([min(x) max(x) min([y1 y2 y3]) max([y1 y2 y3])])
 grid on
@@ -56,7 +56,7 @@ studentai = {'Fausta', 'Mantas', 'Karolina', 'Jonas', 'Greta', 'Nojus'};
 figure
 bar(P)
 xlabel('Studentas')
-ylabel('Pažymys')
+ylabel('Pazymys')
 title('a)')
 legend('1 egzaminas', '2 egzaminas', '3 egzaminas', '4 egzaminas')
 xticks(1:6)
@@ -69,7 +69,7 @@ grid on
 figure
 bar(P, 'stacked')
 xlabel('Studentas')
-ylabel('Pažymių suma')
+ylabel('Pazymiu suma')
 title('b)')
 legend('1 egzaminas', '2 egzaminas', '3 egzaminas', '4 egzaminas')
 xticks(1:6)
@@ -110,7 +110,7 @@ yline(U2, '-')
 hold off
 
 xlabel('Laikas, s')
-ylabel('Įtampa, V')
+ylabel('Itampa, V')
 title('Pradinis ir filtruotas signalai')
 legend('Pradinis signalas', 'Filtruotas signalas', 'U_1', 'U_2', ...
     'Location', 'southeast')
@@ -141,7 +141,7 @@ hold off
 xlabel('Laikas, s')
 ylabel('Įtampa, V')
 title('Pradinio signalo reikšmės, viršijančios U_1 ribą')
-legend('Reikėmės virš U_1', 'Maksimumas', 'Minimumas', ...
+legend('Reiksmes virs U_1', 'Maksimumas', 'Minimumas', ...
     'Location', 'southeast')
 xlim([min(t) max(t)])
 ylim([min(s_triuksmingas)-1 max(s_triuksmingas)+1])
