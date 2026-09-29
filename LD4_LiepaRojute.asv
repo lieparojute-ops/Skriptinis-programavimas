@@ -1,0 +1,87 @@
+% Liepa Rojute EEf-25/2
+% 2026-09-29
+% 8 variantas
+
+%% 1. Trimatis grafiku vaizdavimas
+
+clear
+close all
+
+% a)
+
+x = linspace(-2, 2, 100);
+y = linspace(-2, 2, 100);
+
+[X, Y] = meshgrid(x, y);
+
+Z = sin(abs(X + Y) / 20) .* exp(-abs(X + Y));   % Duota lygtis
+
+figure;
+
+surf(X, Y, Z);
+
+% Parenkamas spalvu zemelapis
+colormap(parula);
+
+% Nustatomas seseliavimas
+shading interp;
+
+% Pasukamos x ir y plokstumos 90 laipsniu kampu
+view(90, 90);
+
+% Asiu pavadinimai
+xlabel('x');
+ylabel('y');
+zlabel('f(x,y)');
+
+% Grafiko pavadinimas
+title('a) f(x,y) = sin(|x+y|/20) e^{-|x+y|}');
+
+% Ijungiamas tinklelis
+grid on;
+
+
+%% b)
+
+% Kampas theta nuo 0 iki 2*pi
+theta = linspace(0, 2*pi, 100);
+
+% Spindulys r nuo 0 iki 1
+r = linspace(0, 1, 100);
+
+% Sudaromas r ir theta reiksmiu tinklelis
+[R, THETA] = meshgrid(r, theta);
+
+% Polines koordinates pakeiciamos i Dekarto koordinates
+X = R .* cos(THETA);
+Y = R .* sin(THETA);
+
+% Apskaiciuojama funkcija:
+% f(x,y) = 1 - 2*x^2 - 3*y^2
+Z = 1 - 2 .* X.^2 - 3 .* Y.^2;
+
+% Sukuriamas naujas grafiko langas
+figure;
+
+% Braizomas trimatis pavirsiaus grafikas
+surf(X, Y, Z);
+
+% Parenkamas spalvu zemelapis
+colormap(parula);
+
+% Nustatomas seseliavimas
+shading interp;
+
+% Pasukamos x ir y plokstumos 45 laipsniu kampu
+view(45, 45);
+
+% Asiu pavadinimai
+xlabel('x');
+ylabel('y');
+zlabel('f(x,y)');
+
+% Grafiko pavadinimas
+title('b) f(x,y) = 1 - 2x^2 - 3y^2');
+
+% Ijungiamas tinklelis
+grid on;
