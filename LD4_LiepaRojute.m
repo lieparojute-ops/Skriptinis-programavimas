@@ -24,7 +24,7 @@ colormap(spring);
 
 shading interp;
 
-view(90, 90);   % pasukamos x ir y plokstumos 90 l. kampu
+view(90, 90);
 
 xlabel('x');
 ylabel('y');
@@ -65,5 +65,26 @@ title('b) f(x,y) = 1 - 2x^2 - 3y^2');
 
 grid on;
 
-%% Papildoma uzduotis
+%% Papildoma uzduotis 
+% (5 variantas)
 
+x = linspace(-1, 1, 100);
+y = linspace(-1, 1, 100);
+
+[X, Y] = meshgrid(x, y);
+
+Z = 1 - (X.^2 + Y.^2);   % Duota lygtis
+
+figure;
+
+surf(X, Y, Z, 'FaceColor', 'blue');
+
+alpha(0.5);
+
+xlabel('x');
+ylabel('y');
+zlabel('z(x,y)');
+
+title('z(x,y) = 1 - (x^2 + y^2)');
+
+grid on;
