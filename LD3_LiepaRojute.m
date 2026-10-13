@@ -127,11 +127,11 @@ ind = s_triuksmingas > U1;
 stem(t(ind), s_triuksmingas(ind))
 hold on
 
-max_reiksme = max(s_triuksmingas);
-min_reiksme = min(s_triuksmingas);
+max_reiksme = max(s_triuksmingas(ind));
+min_reiksme = min(s_triuksmingas(ind));
 
-max_ind = s_triuksmingas == max_reiksme;
-min_ind = s_triuksmingas == min_reiksme;
+max_ind = ind & (s_triuksmingas == max_reiksme);
+min_ind = ind & (s_triuksmingas == min_reiksme);
 
 plot(t(max_ind), s_triuksmingas(max_ind), 'd', 'MarkerSize', 9)
 plot(t(min_ind), s_triuksmingas(min_ind), 'rd', 'MarkerSize', 9)
@@ -141,8 +141,8 @@ hold off
 xlabel('Laikas, s')
 ylabel('Įtampa, V')
 title('Pradinio signalo reikšmės, viršijančios U_1 ribą')
-legend('Reikėmės virš U_1', 'Maksimumas', 'Minimumas', ...
+legend('Reikšmės virš U_1', 'Maksimumas', 'Minimumas', ...
     'Location', 'southeast')
 xlim([min(t) max(t)])
-ylim([min(s_triuksmingas)-1 max(s_triuksmingas)+1])
+ylim([0 max_reiksme+1])
 grid on
